@@ -1,57 +1,54 @@
 # S-UI
-**An Advanced Web Panel • Built on SagerNet/Sing-Box**
 
-![](https://img.shields.io/github/v/release/alireza0/s-ui.svg)
+基于 SagerNet/Sing-Box 的**高级网络面板**
+
+![](https://img.shields.io/github/v/release/Misaka-blog/s-ui.svg)
 ![](https://img.shields.io/docker/pulls/alireza7/s-ui.svg)
-[![Downloads](https://img.shields.io/github/downloads/alireza0/s-ui/total.svg)](https://img.shields.io/github/downloads/alireza0/s-ui/total.svg)
+[![下载](https://img.shields.io/github/downloads/Misaka-blog/s-ui/total.svg)](https://img.shields.io/github/downloads/Misaka-blog/s-ui/total.svg)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-> **Disclaimer:** This project is only for personal learning and communication, please do not use it for illegal purposes, please do not use it in a production environment
+> 免责声明：** 本项目仅用于个人学习和交流，请勿将其用于非法目的，也请勿将其用于生产环境。
 
-**If you think this project is helpful to you, you may wish to give a**:star2:
+**如果您认为本项目对您有帮助，不妨给予***:star2：
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alireza7)
-
-- USDT (TRC20): `TYTq73Gj6dJ67qe58JVPD9zpjW2cc9XgVz`
-
-## Quick Overview
-| Features                               |      Enable?       |
+## 快速概览
+| 功能 | 启用？      |
 | -------------------------------------- | :----------------: |
-| Multi-Protocol                         | :heavy_check_mark: |
-| Multi-Language                         | :heavy_check_mark: |
-| Multi-Client/Inbound                   | :heavy_check_mark: |
-| Advanced Traffic Routing Interface     | :heavy_check_mark: |
-| Client & Traffic & System Status       | :heavy_check_mark: |
-| Subscription Service (link + info)     | :heavy_check_mark: |
-| Dark/Light Theme                       | :heavy_check_mark: |
+| 多协议 | :heavy_check_mark： |
+| 多语言 | :heavy_check_mark： |
+| 多客户/入站 | :heavy_check_mark： |
+| 高级流量路由接口 | :heavy_check_mark： |
+| 客户、流量和系统状态 | :heavy_check_mark： |
+| 订阅服务（链接 + 信息） | :heavy_check_mark： |
+| 深色/浅色主题 | :heavy_check_mark： |
 
 
-## Default Installation Informarion
-- Panel Port: 2095
-- Panel Path: /app/
-- Subscription Port: 2096
-- Subscription Path: /sub/
-- User/Passowrd: admin
+## 默认安装信息
+- 面板端口： 2095
+- 面板路径 /app/
+- 订阅端口： 2096
+- 订阅路径： /sub/
+- 用户/密码： admin
 
-## Install & Upgrade to Latest Version
-
-```sh
-bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh)
-```
-
-## Install Custom Version
-
-**Step 1:** To install your desired version, add the version to the end of the installation command. e.g., ver `0.0.1`:
+## 安装并升级到最新版本
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh) 0.0.1
+bash <(curl -Ls https://raw.githubusercontent.com/Misaka-blog/s-ui/master/install.sh)
 ```
 
-## Uninstall S-UI
+## 安装自定义版本
+
+**步骤 1:** 要安装所需的版本，请在安装命令末尾添加版本，例如，ver `0.0.1`：
+
+``sh
+bash <(curl -Ls https://raw.githubusercontent.com/Misaka-blog/s-ui/master/install.sh) 0.0.1
+```
+
+## 卸载 S-UI
 
 ```sh
 systemctl disable sing-box --now
-systemctl disable s-ui  --now
+systemctl disable s-ui --now
 
 rm -f /etc/systemd/system/s-ui.service
 rm -f /etc/systemd/system/sing-box.service
@@ -60,88 +57,88 @@ systemctl daemon-reload
 rm -fr /usr/local/s-ui
 ```
 
-## Install using Docker
+## 使用 Docker 安装
 
-<details>
-   <summary>Click for details</summary>
+<details
+   <summary>点击查看详情</summary
 
-### Usage
+### 使用方法
 
-**Step 1:** Install Docker
+**步骤 1:** 安装 Docker
 
-```shell
+``shell
 curl -fsSL https://get.docker.com | sh
 ```
 
-**Step 2:** Install S-UI
+**第 2 步：** 安装 S-UI
 
-```shell
+``shell
 mkdir s-ui && cd s-ui
 docker run -itd \
     -p 2095:2095 -p 443:443 -p 80:80 \
-    -v $PWD/db/:/usr/local/s-ui/db/ \
+    -v $PWD/db/:/usr/local/s-ui/db/\
     -v $PWD/cert/:/root/cert/ \
-    --name s-ui --restart=unless-stopped \
+    --name s-ui --restart=unless-stopped （除非已停止
     alireza7/s-ui:latest
 ```
 
-> Build your own image
+> 构建自己的映像
 
 ```shell
 docker build -t s-ui .
 ```
 
-</details>
+</details
 
-## Languages
+## 语言
 
-- English
-- Farsi
-- Chinese (Simplified)
+- 英语
+- 波斯语
+- 简体中文
 
-## Features
+## 功能
 
-- Supported protocols:
-  - General:  Mixed, SOCKS, HTTP, HTTPS, Direct, Redirect, TProxy
-  - V2Ray based: VLESS, VMess, Trojan, Shadowsocks
-  - Other protocols: ShadowTLS, Hysteria, Hysteri2, Naive, TUIC
-- Supports XTLS protocols
-- An advanced interface for routing traffic, incorporating PROXY Protocol, External, and Transparent Proxy, SSL Certificate, and Port
-- An advanced interface for inbound and outbound configuration
-- Clients’ traffic cap and expiration date
-- Displays online clients, inbounds and outbounds with traffic statistics, and system status monitoring
-- Subscription service with ability to add external links and subscription
-- HTTPS for secure access to the web panel and subscription service (self-provided domain + SSL certificate)
-- Dark/Light theme
+- 支持的协议：
+  - 通用：  混合、SOCKS、HTTP、HTTPS、直接、重定向、TProxy
+  - 基于 V2Ray： VLESS、VMess、Trojan、Shadowsocks
+  - 其他协议 ShadowTLS、Hysteria、Hysteri2、Naive、TUIC
+- 支持 XTLS 协议
+- 用于路由流量的高级界面，包括 PROXY 协议、外部和透明代理、SSL 证书和端口
+- 用于入站和出站配置的高级界面
+- 客户端流量上限和到期日期
+- 显示在线客户端、入站和出站流量统计以及系统状态监控
+- 可添加外部链接和订阅的订阅服务
+- HTTPS 用于安全访问网络面板和订阅服务（自备域名 + SSL 证书）
+- 深色/浅色主题
 
-## Recommended OS
+## 推荐操作系统
 
 - CentOS 8+
 - Ubuntu 20+
 - Debian 10+
 - Fedora 36+
 
-## Environment Variables
+## 环境变量
 
 <details>
-  <summary>Click for details</summary>
+  <summary>点击查看详情</summary
 
-### Usage
+### 使用方法
 
-| Variable       |                      Type                      | Default       |
+| 变量 | 类型 | 默认值
 | -------------- | :--------------------------------------------: | :------------ |
-| SUI_LOG_LEVEL  | `"debug"` \| `"info"` \| `"warn"` \| `"error"` | `"info"`      |
-| SUI_DEBUG      |                   `boolean`                    | `false`       |
-| SUI_BIN_FOLDER |                    `string`                    | `"bin"`       |
-| SUI_DB_FOLDER  |                    `string`                    | `"db"`        |
-| SINGBOX_API    |                    `string`                    | -             |
+| SUI_LOG_LEVEL | `"debug"`\| `"info"`\| `"warn"`\| `"error"` | `"info"` |
+| SUI_DEBUG | `boolean` | `false` | SUI_BIN_BUG
+| SUI_BIN_FOLDER | `string` | `"bin"` | SUI_DB_FOLDER
+| SUI_DB_FOLDER | `string` | `"db"`。
+| SINGBOX_API | `string` | - | SINGBOX_API
 
 </details>
 
-## SSL Certificate
+## SSL 证书
 
 <details>
-  <summary>Click for details</summary>
+  <summary>点击查看详情</summary>
 
 ### Certbot
 
@@ -150,10 +147,11 @@ snap install core; snap refresh core
 snap install --classic certbot
 ln -s /snap/bin/certbot /usr/bin/certbot
 
-certbot certonly --standalone --register-unsafely-without-email --non-interactive --agree-tos -d <Your Domain Name>
+certbot certonly --standalone --register-unsafely-without-email --non-interactive --agree-tos -d <您的域名>。
 ```
 
 </details>
 
-## Stargazers over Time
-[![Stargazers over time](https://starchart.cc/alireza0/s-ui.svg?variant=adaptive)](https://starchart.cc/alireza0/s-ui)
+## Star 趋势
+
+[![Stargazers over time](https://starchart.cc/Misaka-blog/s-ui.svg?variant=adaptive)](https://starchart.cc/Misaka-blog/s-ui)
