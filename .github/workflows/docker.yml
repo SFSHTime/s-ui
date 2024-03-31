@@ -20,7 +20,7 @@ jobs:
       with:
         images: |
           misakablog/s-ui
-          ghcr.io/alireza0/s-ui
+          ghcr.io/misaka-blog/s-ui
         tags: |
           type=ref,event=branch
           type=ref,event=tag
