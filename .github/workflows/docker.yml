@@ -19,7 +19,7 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: |
-          alireza7/s-ui
+          misakablog/s-ui
           ghcr.io/alireza0/s-ui
         tags: |
           type=ref,event=branch

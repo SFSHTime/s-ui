@@ -14,7 +14,7 @@ COPY --from=front-builder  /app/dist/ /app/web/html/
 RUN go build -o sui main.go
 
 FROM alpine
-LABEL org.opencontainers.image.authors="alireza7@gmail.com"
+LABEL org.opencontainers.image.authors="misakablog@gmail.com"
 ENV TZ=Asia/Tehran
 WORKDIR /app
 RUN apk add  --no-cache --update ca-certificates tzdata

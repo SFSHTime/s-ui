@@ -3,7 +3,7 @@
 基于 SagerNet/Sing-Box 的**高级网络面板**
 
 ![](https://img.shields.io/github/v/release/Misaka-blog/s-ui.svg)
-![](https://img.shields.io/docker/pulls/alireza7/s-ui.svg)
+![](https://img.shields.io/docker/pulls/misakablog/s-ui.svg)
 [![下载](https://img.shields.io/github/downloads/Misaka-blog/s-ui/total.svg)](https://img.shields.io/github/downloads/Misaka-blog/s-ui/total.svg)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
@@ -14,13 +14,13 @@
 ## 快速概览
 | 功能 | 启用？      |
 | -------------------------------------- | :----------------: |
-| 多协议 | :heavy_check_mark： |
-| 多语言 | :heavy_check_mark： |
-| 多客户/入站 | :heavy_check_mark： |
-| 高级流量路由接口 | :heavy_check_mark： |
-| 客户、流量和系统状态 | :heavy_check_mark： |
-| 订阅服务（链接 + 信息） | :heavy_check_mark： |
-| 深色/浅色主题 | :heavy_check_mark： |
+| 多协议 | :heavy_check_mark: |
+| 多语言 | :heavy_check_mark: |
+| 多客户/入站 | :heavy_check_mark: |
+| 高级流量路由接口 | :heavy_check_mark: |
+| 客户、流量和系统状态 | :heavy_check_mark: |
+| 订阅服务（链接 + 信息） | :heavy_check_mark: |
+| 深色/浅色主题 | :heavy_check_mark: |
 
 
 ## 默认安装信息
@@ -40,7 +40,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/Misaka-blog/s-ui/master/instal
 
 **步骤 1:** 要安装所需的版本，请在安装命令末尾添加版本，例如，ver `0.0.1`：
 
-``sh
+```sh
 bash <(curl -Ls https://raw.githubusercontent.com/Misaka-blog/s-ui/master/install.sh) 0.0.1
 ```
 
@@ -59,27 +59,27 @@ rm -fr /usr/local/s-ui
 
 ## 使用 Docker 安装
 
-<details
-   <summary>点击查看详情</summary
+<details>
+   <summary>点击查看详情</summary>
 
 ### 使用方法
 
 **步骤 1:** 安装 Docker
 
-``shell
+```shell
 curl -fsSL https://get.docker.com | sh
 ```
 
 **第 2 步：** 安装 S-UI
 
-``shell
+```shell
 mkdir s-ui && cd s-ui
 docker run -itd \
     -p 2095:2095 -p 443:443 -p 80:80 \
     -v $PWD/db/:/usr/local/s-ui/db/\
     -v $PWD/cert/:/root/cert/ \
     --name s-ui --restart=unless-stopped （除非已停止
-    alireza7/s-ui:latest
+    misakablog/s-ui:latest
 ```
 
 > 构建自己的映像
@@ -88,7 +88,7 @@ docker run -itd \
 docker build -t s-ui .
 ```
 
-</details
+</details>
 
 ## 语言
 
@@ -99,9 +99,9 @@ docker build -t s-ui .
 ## 功能
 
 - 支持的协议：
-  - 通用：  混合、SOCKS、HTTP、HTTPS、直接、重定向、TProxy
+  - 通用：Mixed, SOCKS, HTTP, HTTPS, Direct, Redirect, TProxy
   - 基于 V2Ray： VLESS、VMess、Trojan、Shadowsocks
-  - 其他协议 ShadowTLS、Hysteria、Hysteri2、Naive、TUIC
+  - 其他协议: ShadowTLS、Hysteria、Hysteri2、Naive、TUIC
 - 支持 XTLS 协议
 - 用于路由流量的高级界面，包括 PROXY 协议、外部和透明代理、SSL 证书和端口
 - 用于入站和出站配置的高级界面
