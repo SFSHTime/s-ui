@@ -7,7 +7,7 @@
 [![下载](https://img.shields.io/github/downloads/Misaka-blog/s-ui/total.svg)](https://img.shields.io/github/downloads/Misaka-blog/s-ui/total.svg)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-> 免责声明：** 本项目仅用于个人学习和交流，请勿将其用于非法目的，也请勿将其用于生产环境。
+> 免责声明：本项目仅用于个人学习和交流，请勿将其用于非法目的，也请勿将其用于生产环境。
 
 **如果您认为本项目对您有帮助，不妨给予**:star2:
 
