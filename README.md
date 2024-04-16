@@ -92,9 +92,10 @@ docker build -t s-ui .
 
 ## 语言
 
-- 英语
-- 波斯语
-- 简体中文
+- English
+- Farsi
+- Chinese (Simplified)
+- Chinese (Traditional)
 
 ## 功能
 
