@@ -19,7 +19,7 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: |
-          sfshtime/ui
+          sfshc/ui
           ghcr.io/sfshtime/ui
         tags: |
           type=ref,event=branch
