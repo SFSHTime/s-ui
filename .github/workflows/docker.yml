@@ -19,8 +19,8 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: |
-          misakablog/s-ui
-          ghcr.io/misaka-blog/s-ui
+          sfshtime/ui
+          ghcr.io/sfshtime/ui
         tags: |
           type=ref,event=branch
           type=ref,event=tag
